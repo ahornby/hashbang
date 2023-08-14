@@ -29,6 +29,7 @@ pub(crate) fn extract(
                 }
                 exec_path = Some(path);
             }
+            ExtractStep::WriteArchive => tmp_file.write_all(&data)?,
             ExtractStep::ZstdDecompress => {
                 let mut decoder = zstd::Decoder::new(&data[..])?;
                 let mut decompressed = Vec::new();

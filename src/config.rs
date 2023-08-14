@@ -24,8 +24,10 @@ pub enum ArchiveSource {
 #[serde(rename_all = "snake_case")]
 /// Some tools ship as a single file, others as a compressed directory
 pub enum ExtractStep {
-    /// Make a binary executable
+    /// Make a path executable
     MakeExecutable(String),
+    /// Write the archive file to disk without any decompression
+    WriteArchive,
     /// Decompresses a single archive file
     ZstdDecompress,
 }

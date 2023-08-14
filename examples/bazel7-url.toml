@@ -1,0 +1,31 @@
+#!/usr/bin/env -S HASHBANG_CONFIG_URL=file:. hashbang
+name = "bazel7-url"
+
+[[platforms]]
+target_spec = "x86_64-apple-darwin"
+archives."bazel7".source.url = "https://github.com/bazelbuild/bazel/releases/download/7.0.0-pre.20230724.1/bazel-7.0.0-pre.20230724.1-darwin-x86_64"
+archives."bazel7".extract_steps = [ "write_archive", { make_executable = "bazel" }, ]
+archives."bazel7".sha256 = "15fad39c5cf8b32af3c2c57de209112d90846f9bfbb48978be91e3d274f04952"
+binaries."bazel".provided_by = "bazel7"
+
+[[platforms]]
+target_spec = "x86_64-unknown-linux-gnu"
+archives."bazel7".source.url = "https://github.com/bazelbuild/bazel/releases/download/7.0.0-pre.20230724.1/bazel-7.0.0-pre.20230724.1-linux-x86_64"
+archives."bazel7".extract_steps = [ "write_archive", { make_executable = "bazel" }, ]
+archives."bazel7".sha256 = "67b4580330a33cbcb51c5887289c4fb9f2d638481bfa57e328b6688e2ab55aa5"
+binaries."bazel".provided_by = "bazel7"
+
+
+[[platforms]]
+target_spec = "aarch64-apple-darwin"
+archives."bazel7".source.url = "https://github.com/bazelbuild/bazel/releases/download/7.0.0-pre.20230724.1/bazel-7.0.0-pre.20230724.1-darwin-arm64"
+archives."bazel7".extract_steps = [ "write_archive", { make_executable = "bazel" }, ]
+archives."bazel7".sha256  = "2472287345115c4e7d0e2402a69fd5d65fa9458a3d3e279534b7b472b22b3c0a"
+binaries."bazel".provided_by = "bazel7"
+
+[[platforms]]
+target_spec = "aarch64-unknown-linux-gnu"
+archives."bazel7".source.url = "https://github.com/bazelbuild/bazel/releases/download/7.0.0-pre.20230724.1/bazel-7.0.0-pre.20230724.1-linux-arm64"
+archives."bazel7".extract_steps = [ "write_archive", { make_executable = "bazel" }, ]
+archives."bazel7".sha256 = "d0c17e8ed17ce201e633fd3e46fcc46bdfe7831eae3e8b83d132a85f4d1779ac"
+binaries."bazel".provided_by = "bazel7"
