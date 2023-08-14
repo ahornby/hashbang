@@ -1,0 +1,67 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug executable 'hashbang'",
+            "cargo": {
+                "args": [
+                    "build",
+                    "--bin=hashbang",
+                    "--package=hashbang"
+                ],
+                "filter": {
+                    "name": "hashbang",
+                    "kind": "bin"
+                },
+                "env": {
+                    "HASHBANG_CONFIG_URL": "file:./tests/data/buck2-test-config.toml"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug unit tests in executable 'hashbang'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--bin=hashbang",
+                    "--package=hashbang"
+                ],
+                "filter": {
+                    "name": "hashbang",
+                    "kind": "bin"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "type": "lldb",
+            "request": "launch",
+            "name": "Debug integration test 'integration_buck2'",
+            "cargo": {
+                "args": [
+                    "test",
+                    "--no-run",
+                    "--test=integration_buck2",
+                    "--package=hashbang"
+                ],
+                "filter": {
+                    "name": "integration_buck2",
+                    "kind": "test"
+                }
+            },
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        }
+    ]
+}

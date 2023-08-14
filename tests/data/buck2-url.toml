@@ -1,0 +1,26 @@
+#!/usr/bin/env -S HASHBANG_CONFIG_URL=file:. cargo run --
+name = "buck2-url"
+
+[[platforms]]
+target_spec = "x86_64-apple-darwin"
+archives."buck2_zst".source.url = "https://github.com/facebook/buck2/releases/download/2023-08-01/buck2-x86_64-apple-darwin.zst"
+archives."buck2_zst".extract_steps = [ "zstd_decompress", { make_executable = "buck2" }, ]
+binaries."buck2".provided_by = "buck2_zst"
+
+[[platforms]]
+target_spec = "x86_64-unknown-linux-gnu"
+archives."buck2_zst".source.url = "https://github.com/facebook/buck2/releases/download/2023-08-01/buck2-x86_64-unknown-linux-gnu.zst"
+archives."buck2_zst".extract_steps = [ "zstd_decompress", { make_executable = "buck2" }, ]
+binaries."buck2".provided_by = "buck2_zst"
+
+[[platforms]]
+target_spec = "aarch64-apple-darwin"
+archives."buck2_zst".source.url = "https://github.com/facebook/buck2/releases/download/2023-08-01/buck2-buck2-aarch64-apple-darwin.zst"
+archives."buck2_zst".extract_steps = [ "zstd_decompress", { make_executable = "buck2" }, ]
+binaries."buck2".provided_by = "buck2_zst"
+
+[[platforms]]
+target_spec = "aarch64-unknown-linux-gnu.zst"
+archives."buck2_zst".source.url = "https://github.com/facebook/buck2/releases/download/2023-08-01/buck2-aarch64-unknown-linux-gnu.zst"
+archives."buck2_zst".extract_steps = [ "zstd_decompress", { make_executable = "buck2" }, ]
+binaries."buck2".provided_by = "buck2_zst"
